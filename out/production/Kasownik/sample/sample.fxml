@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="360.0" prefWidth="560.0" style="-fx-background-color: #f4bf42;">
+         <children>
+            <Button fx:id="BuyDiscountTicket" layoutX="15.0" layoutY="277.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buyDiscountTicket" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #898989;" text="Discount">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="BuyNormalTicketButton" layoutX="155.0" layoutY="277.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buyNormalTicket" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #898989;" text="Normal">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="LeaveBus" layoutX="288.0" layoutY="277.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#leaveBus" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #898989;" text="Leave">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="CardStatusButton" layoutX="429.0" layoutY="277.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#checkCardStatus" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #898989;" text="Status">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <TextField fx:id="cardField" layoutX="87.0" layoutY="217.0" prefHeight="31.0" prefWidth="386.0" text="E9932945882253724271538546353623" />
+            <Label layoutX="87.0" layoutY="179.0" prefHeight="31.0" prefWidth="386.0" text="Card id">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label layoutX="87.0" layoutY="97.0" prefHeight="73.0" prefWidth="386.0" />
+            <Circle fx:id="led" layoutX="484.0" layoutY="134.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="14.0" layoutY="45.0" prefHeight="31.0" prefWidth="42.0" text="Time:">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="42.0" text="Date:">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="screen" layoutX="87.0" layoutY="110.0" prefHeight="48.0" prefWidth="379.0" style="-fx-background-color: #a5c99b; -fx-border-style: solid;">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label fx:id="dateLabel" layoutX="70.0" layoutY="16.0" prefHeight="22.0" prefWidth="98.0" text="Label">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="hourLabel" layoutX="70.0" layoutY="47.0" prefHeight="21.0" prefWidth="98.0" text="Label">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="288.0" layoutY="19.0" text="Last bus stop:" />
+            <Label layoutX="288.0" layoutY="50.0" text="Next bus stop:" />
+            <Label fx:id="lastBustStop" layoutX="394.0" layoutY="19.0" prefHeight="21.0" prefWidth="160.0" text="Zytnia" />
+            <Label fx:id="nextBusStop" layoutX="394.0" layoutY="50.0" prefHeight="21.0" prefWidth="160.0" text="Paderewskiego" />
+            <AnchorPane fx:id="anchor2" layoutX="10.0" layoutY="10.0" prefHeight="343.0" prefWidth="542.0" style="-fx-background-color: #f4bf42;">
+               <children>
+                  <Button fx:id="startRide" layoutX="238.0" layoutY="298.0" mnemonicParsing="false" onAction="#startRide" text="START!" />
+                  <ListView fx:id="linePicker" layoutX="12.0" layoutY="29.0" onMouseClicked="#getLineName" prefHeight="197.0" prefWidth="521.0" />
+                  <DatePicker fx:id="datePicker" layoutX="165.0" layoutY="260.0" />
+                  <ChoiceBox fx:id="hourPicker" layoutX="392.0" layoutY="259.0" prefWidth="150.0" />
+                  <Label layoutX="13.0" layoutY="4.0" text="(1) Choose line">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="165.0" layoutY="228.0" text="(3) Choose day">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="392.0" layoutY="228.0" text="(4) Choose hour">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="6.0" layoutY="228.0" text="(2) Choose route">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="routePicker" layoutX="6.0" layoutY="260.0" prefWidth="150.0" />
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
